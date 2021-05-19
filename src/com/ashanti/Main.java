@@ -2,6 +2,8 @@ package com.ashanti;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -224,13 +226,118 @@ public class Main {
         }
 
 
+        //----------------------------------------------------------
+
+        System.out.println("*******************************");
+        System.out.println("*** While Loop ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        int bandMembers = 3;
+        while (bandMembers > 3){
+            System.out.println(bandMembers + " Band members are playing music");
+            bandMembers = new Random().nextInt(50);
+        }
+
+        System.out.println("--------------------------------------------------------");
+
+        //----------------------------------------------------------
+
+        System.out.println("*******************************");
+        System.out.println("*** Do While Loop ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        int cookies = 1;
+        do{
+            System.out.println("There are " + cookies + " cookies in the jar");
+            cookies += 5 ;
+        } while (cookies < 1);
+
+        System.out.println("--------------------------------------------------------");
+
+        String name = "Ashanti";
+        //for each loop
+        for(char c : name.toCharArray()){
+            System.out.println(c);
+            System.out.println();
+        }
+
+        //for loop
+        for (int i = 0 ; i < name.length(); i++){
+            System.out.println(name.charAt(i));
+            System.out.println();
+        }
+
+        //while loop
+        int nameLength = name.toCharArray().length;
+        while (nameLength > 0) {
+            System.out.println(name.charAt(7-(nameLength)));
+            System.out.println();
+            nameLength--;
+        }
+
+        //----------------------------------------------------------
+
+        System.out.println("*******************************");
+        System.out.println("*** Switch Statement ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        String shoe = "Nike";
+         switch (shoe) {
+             case "Adidas" :
+                 System.out.println("You do not have a pair of Nikes.");
+                 break;
+             case "Reebok" :
+                 System.out.println("Bet you wish you had a pair of Nikes.");
+                 break;
+             case "Nike" :
+                 System.out.println("You're like mike.");
+                 break;
+         }
+
+        //----------------------------------------------------------
+
+
+        System.out.println("*******************************");
+        System.out.println("*** Exception Handling (Try-Catch-Finally Statement) ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+
+        boolean finished = false;
+        while (!finished) {
+            System.out.println("Input your age: ");
+            Scanner sc = new Scanner(System.in);
+            String s = sc.nextLine().trim();
+            try {
+                int age = Integer.parseInt(s);
+                if (age >= 13) {
+                    System.out.println("You can ride");
+                    finished = true;
+                } else {
+                    System.out.println("Sorry, you cannot ride.");
+                    finished = true;
+                }
+            } catch (Exception e) {
+                System.out.println("You must enter a number and nothing else");
+                System.out.println(e.getMessage());
+
+            }
+        }
+
+
+
+/*
         //int thirdVariable = secondVariable * 2; // this will cause a compile error because secondVariable is not "in scope"
         //int firstVariable = 3;  // this is a compiler error because we already have a variable named firstVariable in this scope
         int secondVariable = 7; // this is allowed because there is no variable named secondVariable in this scope
 
         boolean burnItDown = shouldBurnDownTheBuilding(14, 20);
+*/
 
-
+        /*
 
         Calculator myCalculator = new Calculator();
         System.out.println(1+1);
@@ -240,6 +347,8 @@ public class Main {
         myCalculator.compare(24, 37);
         myCalculator.compare(24, 24);
 
+
+         */
 
 
 
